@@ -17,7 +17,7 @@ do {
     $end = microtime(true);
 } while (($end - $start) < $timeTarget);
 
-echo "Appropriate Cost Found: " . $cost."<br />";
+echo "Appropriate Cost Found: " . $cost."<br>";
 
 echo "Password Hash: ".$hashed
 

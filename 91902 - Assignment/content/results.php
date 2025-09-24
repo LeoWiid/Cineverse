@@ -94,7 +94,7 @@ if ($find_count > 0) {
                 </div>
             <?php } ?>
         </div>
-        <br />
+    
         <?php
     }
 } else {
@@ -103,7 +103,7 @@ if ($find_count > 0) {
     <div class="no-results">
         Unfortunately - there were no results for your search. Please try again.
     </div>
-    <br />
+    
     <?php
 } // end of 'no results' else
 

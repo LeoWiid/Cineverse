@@ -19,17 +19,18 @@ include("sub_director.php");
         </p>
         
         <div class="autocomplete">
-            <input name="director_full" id="director_full" placeholder="Director Name (Required)" required />
+            <input name="director_full" id="director_full" placeholder="Director Name (Required)" required>
         </div>
 
-        <br /><br />
+    <br><br>
 
         <div class="autocomplete">
-            <input name="genre" id="genre" placeholder="Genre (Required)" required />
+            <input name="genre" id="genre" placeholder="Genre (Required)" required>
         </div>
 
-        <p><input class="form-submit" type="submit" name="submit" value="Submit Movie" /></p>
+    <p><input class="form-submit" type="submit" name="submit" value="Submit Movie"></p>
     </form>
+</div>
 
     <script>
         <?php include("autocomplete.php"); ?>
@@ -42,7 +43,7 @@ include("sub_director.php");
         autocomplete(document.getElementById("director_full"), all_director);
 
     </script>
-</div>
+
 
 <?php
     } // end user logged on it

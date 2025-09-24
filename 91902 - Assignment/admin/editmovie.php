@@ -22,40 +22,32 @@ $genre_1 = $edit_results_rs['Genre'];
 
 ?>
 
-<div class = "admin-form">
-    <h1>Edit a Movie</h1>
 
+<div class="admin-form">
+    <h1>Edit a Movie</h1>
     <form action="index.php?page=change_movie&ID=<?php echo $ID ?>&directorID=<?php echo $director_ID; ?>" method="post">
         <p>
             <textarea name="movie" placeholder="Movie (Required)" required><?php echo $movie; ?></textarea>
         </p>
-
-        <div class ="important">
+        <div class="important">
             If you edit a director, it will change the director name for the movie being edited. It does not edit the director name on all movies attributed to that director.
         </div>
-
         <div class="autocomplete">
-            <p><input name="director_full" id="director_full" value = "<?php echo str_replace(' ', ' ', $director_full_name); ?>" />
-        </p></div>
-
+            <input name="director_full" id="director_full" value = "<?php echo htmlspecialchars($director_full_name); ?>">
+        </div>
         <div class="light_blue">
             Blank genres appear as n/a. You can either edit these / add a genre or leave them as n/a.
         </div>
-
-        <br />
-
+    <br>
         <div class="autocomplete">
-            <input name="genre" id="genre" value = "<?php echo $genre_1; ?>" required />
+            <input name="genre" id="genre" value = "<?php echo htmlspecialchars($genre_1); ?>" required>
         </div>
-
-        <p><input class="form-submit" type="submit" name="submit" value="Edit Movie" /></p>
-
+    <p><input class="form-submit" type="submit" name="submit" value="Edit Movie"></p>
     </form>
-
-
+</div>
 
 <?php
-    } // end user logged on it
+    } // end user logged on if
 
     else {
         $login_error = 'Please login to acces this page';

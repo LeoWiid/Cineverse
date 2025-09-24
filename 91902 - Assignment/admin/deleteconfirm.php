@@ -13,13 +13,16 @@ $sql_conditions = "WHERE Movie_ID = $movie_ID";
 
 include("content/results.php");
 
-// check that variable is defined and set to 0 if not
-    if ($find_rs && isset($find_rs['Director_ID'])) {
-        $director_ID = $find_rs['Director_ID'];
-    }
-    else {
-        $director_ID = 0;
-    }
+// Fetch the movie record directly for director_ID
+$movie_sql = "SELECT * FROM `movies` WHERE `Movie_ID` = $movie_ID";
+$movie_query = mysqli_query($dbconnect, $movie_sql);
+$find_rs = mysqli_fetch_assoc($movie_query);
+
+if ($find_rs && isset($find_rs['Director_ID'])) {
+    $director_ID = $find_rs['Director_ID'];
+} else {
+    $director_ID = 0;
+}
 
 ?> 
 

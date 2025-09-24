@@ -1,3 +1,20 @@
+/* Style for the search button in the quick search form */
+.search-btn {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 6px;
+}
+.search-btn:hover, .search-btn:focus {
+  background: #217dbb;
+  outline: none;
+}
 /* !!!! Autocomplete stuff all */
 /*the container must be positioned relative:*/
 .autocomplete {

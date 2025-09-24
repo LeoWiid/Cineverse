@@ -1,0 +1,222 @@
+body {
+    margin: auto;
+    padding: 50px;
+    color: #000;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Box (for corners & padding) */
+.box {
+    padding-left: 20px;
+    padding-right: 20px;
+    /* border-radius: 10px; */
+    /* background-color: #ddd; */
+}
+
+
+/* Set up grids... specifics */
+
+/*  #### Grid for Main page #### */
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "banner" 
+        "nav"
+        "main"
+        "footer";
+        grid-gap: 4px;
+    
+}
+
+.banner {
+    grid-area: banner;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #DDD;  /* silver */
+    font-size: 150%;
+    padding: 20px;
+    vertical-align: middle;
+    border: solid 1px;
+}
+
+.main {
+    grid-area: main;
+    background-color: #ffd98e;  /* very pale peach */
+    border: solid 1px #d68b00;  /* dark orange border */
+}
+
+
+.footer {
+    grid-area: footer;
+    text-align: right;
+    padding: 20px;
+}
+
+/*  #### Grid for Navigation area page #### */
+
+.linkwrapper {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-template-areas: 
+        "commonsearches topsearch topadmin";
+    grid-gap: 4px;
+}
+
+
+.commonsearches {
+    grid-area: commonsearches;
+    text-align: center;
+}
+
+.topsearch {
+    grid-area: topsearch;
+    text-align: right;
+}
+
+.topadmin {
+    grid-area: topadmin;
+    text-align: center;
+}
+
+/* ### Additional div styling (put colours / corners here) */
+
+
+/* Area colouring... */
+
+/* logo, banner and footer background are the same */
+.banner, .footer {
+    background-color: #ddd;  /* light grey */
+    border: solid 1px #bbb;
+}
+
+
+/* #### Links Styling  #### */
+
+/* Navigation Links */
+a.topnav {font-weight: bold;}
+a.topnav:link, a.topnav:visited {color: #007c72;} /*dark teal */
+a.topnav:hover {color: #707a00; text-decoration: none;} 
+
+
+/* links in page */
+a {font-weight: bold;}
+a:link{color: #007c72;} /* dark teal */
+a:visited{color: #222;} /* dark grey */
+a:hover{color: #707a00;}    /* Dark Green*/
+
+/* #### Headings / text styling #### */
+h1, h2, h3, h4 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.results {
+    background-color: #fff;
+    border: 1px solid #d68b00;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tag {
+    background-color: bisque;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px #000;
+    border-radius: 5px;
+}
+
+.no-results {
+    padding: 5px;
+    background-color: #ffbbbb;
+    border: solid 1px #a40f0f
+}
+
+/* ### Form / Search  Styling #### */
+
+form {
+    width: 100%;
+}
+
+.search {
+    background:#fff;
+    width: 200px;
+}
+
+.submit::-moz-focus-inner { 
+    border: 0;
+}
+
+
+.submit {
+    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position:relative;
+    width: 45px;
+    font-size: 14px;
+    
+    left:-5px;
+    background-color: #636263; 
+    color:#d6d3d7;
+    border: 1px solid #000;
+    border-radius: 0 5px 5px 0;   
+    display: inline-block;
+    padding: 10px;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #000;
+}
+
+
+input {
+    font-size: 14px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #000;
+    box-sizing: border-box; 
+}
+
+
+.quicksearch {
+    border-radius: 5px 0 0 5px; 
+    display: inline-block;
+}
+
+.quick-choose {
+    padding: 10px;
+    border: solid 1px #000;
+
+}
+
+/* Rules for navigation on small screen */
+@media only screen and (max-width: 1175px )  {
+    .linkwrapper{
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "commonsearches topadmin"
+    "topsearch topsearch"
+    }
+
+    /* Adjust alignment of content on small scrrens */
+    .commonsearches {
+        text-align: left;
+    }
+
+    .topsearch{
+        width: 100%;
+        text-align: left;
+    }
+
+    .topadmin {
+        text-align: right;
+    }
+}
